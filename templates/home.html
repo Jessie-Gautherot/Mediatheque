@@ -3,14 +3,49 @@
 {% block content %}
 <h2>Bienvenue à la médiathèque !</h2>
 
-<h3>Consulter notre liste de livres</h3>
+<details>
+  <summary>Consulter la liste complète de nos Médias</summary>
+  <ul>
+    {% for media in liste_complete %}
+      <li>{{ media }}</li>
+    {% endfor %}
+  </ul>
+</details>
 
-<h3>Consulter notre liste de CD</h3>
+<details>
+  <summary>Consulter la liste complète de nos livres</summary>
+  <ul>
+    {% for livre in liste_livres %}
+      <li>{{ livre }}</li>
+    {% endfor %}
+  </ul>
+</details>
 
-<h3>Consulter notre liste de DVD</h3>
+<details>
+  <summary>Consulter la liste complète de nos CD</summary>
+  <ul>
+    {% for cd in liste_cd %}
+      <li>{{ cd }}</li>
+    {% endfor %}
+  </ul>
+</details>
 
-<h3>Consulter notre liste de jeux de plateau</h3>
-<p>Nous vous rapellons que vous pouvez jouer sur place, les jeux ne sont pas disponibles à l'emprunt</p>
+<details>
+  <summary>Consulter la liste complète de nos DVD</summary>
+  <ul>
+    {% for dvd in liste_dvd %}
+      <li>{{ dvd }}</li>
+    {% endfor %}
+  </ul>
+</details>
 
+<details>
+  <summary>Consulter la liste complète de nos jeux de plateau</summary>
+  <ul>
+    {% for jeu in liste_jeux %}
+      <li>{{ jeu }}</li>
+    {% endfor %}
+  </ul>
+</details>
 
 {% endblock %}
