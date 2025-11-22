@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Espace administration</h2>
+<p>Bienvenue dans l'administration de la médiathèque.</p>
+
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Déconnexion</button>
+</form>
+
+{% endblock %}
