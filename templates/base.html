@@ -1,15 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Médiathèque</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <header>
-        <h1>Médiathèque Notre livre, notre media</h1>
-
+        <div>
+            <h1> Médiathèque Notre livre, notre média </h1>
         <!-- Lien toujours visible pour permettre aux professionnels de se connecter -->
-        <a href="{% url 'login' %}">Connexion Administration</a>
+            <a href="{% url 'login' %}">Connexion Administration</a>
+        </div>
     </header>
 
     <!-- Contenu spécifique à chaque page -->
@@ -19,7 +22,7 @@
     </main>
 
     <footer>
-        <p>Médiathèque copyright 2025</p>
+            <p>Médiathèque copyright 2025</p>
     </footer>
 
 </body>
