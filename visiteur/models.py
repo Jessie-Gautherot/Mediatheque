@@ -5,7 +5,7 @@ class Media(models.Model):
     date_emprunt = models.DateTimeField(null=True, blank=True)
     disponible = models.BooleanField(default=True)
     emprunteur = models.ForeignKey(
-        'administration.Emprunteur',
+        'administration.Membre',
         on_delete=models.SET_NULL,
         null=True,
         blank=True
