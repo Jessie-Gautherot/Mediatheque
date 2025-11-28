@@ -1,5 +1,8 @@
+from administration.models.media import Livre, CD, DVD, JeuDePlateau
 from django.shortcuts import render
-from .models import Livre, CD, DVD, JeuDePlateau
+
+
+
 
 def liste_medias(request):
     livres = Livre.objects.all()

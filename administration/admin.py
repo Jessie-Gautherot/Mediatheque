@@ -1,3 +1,4 @@
 from django.contrib import admin
+from administration.models.membre import Membre
 
-# Register your models here.
+admin.site.register(Membre)
