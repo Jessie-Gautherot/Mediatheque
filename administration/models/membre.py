@@ -7,26 +7,28 @@ class Membre(models.Model):
     prenom = models.CharField(max_length=100)
     email = models.EmailField()
     telephone = models.CharField(max_length=20)
-    bloque = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.prenom} {self.nom}"
 
     def emprunts_actifs(self):
+        # Retourne tous les emprunts pas encore rendus par ce membre
         return self.emprunt_set.filter(date_retour__isnull=True)
 
-    def emprunt_en_retard(self):
+    def a_emprunt_en_retard(self):
+        # Vérifie si le membre a au moins un emprunt non rendu, dépassant la limite de 7 jours
         limite = timezone.now() - timedelta(days=7)
-        for emprunt in self.emprunts_actifs():
-            if emprunt.date_emprunt < limite:
-                return True
-        return False
+        return self.emprunt_set.filter(
+            date_retour__isnull=True,
+            date_emprunt__lt=limite
+        ).exists()
 
     def peut_emprunter(self):
-        if not self.bloque and self.emprunts_actifs().count() < 3 and not self.emprunt_en_retard():
-            return True
-        else:
-            return False
+        # Vérifie si le membre peut emprunter : moins de 3 emprunts actifs et pas d’emprunt en retard
+        return (
+            self.emprunts_actifs().count() < 3
+            and not self.a_emprunt_en_retard()
+        )
 
 
 
