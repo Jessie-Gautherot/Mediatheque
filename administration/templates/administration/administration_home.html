@@ -4,9 +4,20 @@
 <h2>Espace administration</h2>
 <p>Bienvenue dans l'administration de la médiathèque.</p>
 
+<!-- Menu déroulant simple pour ajouter un média -->
+<details>
+    <summary>➕ Ajouter un média</summary>
+    <ul>
+        <a href="{% url 'ajouter_livre' %}">Ajouter un livre</a><br>
+        <a href="{% url 'ajouter_cd' %}">Ajouter un CD</a><br>
+        <a href="{% url 'ajouter_dvd' %}">Ajouter un DVD</a><br>
+        <a href="{% url 'ajouter_jeu' %}">Ajouter un jeu de Plateau</a><br>
+    </ul>
+</details>
+
+<!-- Déconnexion -->
 <form method="post" action="{% url 'logout' %}">
     {% csrf_token %}
     <button type="submit">Déconnexion</button>
 </form>
-
 {% endblock %}

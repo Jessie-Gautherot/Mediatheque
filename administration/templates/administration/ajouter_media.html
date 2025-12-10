@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un {{ type_media }}</title>
+</head>
+<body>
+
+    <h1>Ajouter un {{ type_media }}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Enregistrer</button>
+    </form>
+
+    <p>
+    <a href="{% url 'administration_home' %}">Retour à l'accueil administration</a>
+    </p>
+
+</body>
+</html>
