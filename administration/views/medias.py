@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from administration.forms import LivreForm, CDForm, DVDForm, JeuDePlateauForm
+from administration.forms.form_media import LivreForm, CDForm, DVDForm, JeuDePlateauForm
 
 def ajouter_livre(request):
     if request.method == "POST":

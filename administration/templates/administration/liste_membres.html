@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Liste des membres</title>
+</head>
+<body>
+
+<h1>Liste des membres</h1>
+
+<ul>
+{% for membre in membres %}
+    <li>
+        {{ membre.prenom }} {{ membre.nom }}
+        <a href="{% url 'modifier_membre' membre.id %}">Modifier</a>
+    </li>
+{% empty %}
+    <li>Aucun membre pour le moment.</li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
+
+
