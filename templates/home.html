@@ -3,50 +3,7 @@
 {% block content %}
 <h2>Bienvenue à la médiathèque !</h2>
 
-<details>
-  <summary>Consulter la liste complète de nos Médias</summary>
-  <ul>
-    {% for media in liste_complete %}
-      <li>{{ media }}</li>
-    {% endfor %}
-  </ul>
-</details>
-
-<details>
-  <summary>Consulter la liste complète de nos livres</summary>
-  <ul>
-    {% for livre in liste_livres %}
-      <li>{{ livre }}</li>
-    {% endfor %}
-  </ul>
-</details>
-
-<details>
-  <summary>Consulter la liste complète de nos CD</summary>
-  <ul>
-    {% for cd in liste_cd %}
-      <li>{{ cd }}</li>
-    {% endfor %}
-  </ul>
-</details>
-
-<details>
-  <summary>Consulter la liste complète de nos DVD</summary>
-  <ul>
-    {% for dvd in liste_dvd %}
-      <li>{{ dvd }}</li>
-    {% endfor %}
-  </ul>
-</details>
-
-<details>
-  <summary>Consulter la liste complète de nos jeux de plateau</summary>
-  <ul>
-    {% for jeu in liste_jeux %}
-      <li>{{ jeu }}</li>
-    {% endfor %}
-  </ul>
-    <p>Nous vous rappelons que vous pouvez jouer sur place, les jeux ne sont pas disponibles à l'emprunt </p>
-</details>
+Pour consulter la liste de nos médias,
+<a href="{% url 'liste_medias' %}?from=visiteur">Cliquez ici</a>
 
 {% endblock %}

@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Ajouter un {{ type_media }}</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
 
     <h1>Ajouter un {{ type_media }}</h1>
 
@@ -16,8 +12,7 @@
     </form>
 
     <p>
-    <a href="{% url 'administration_home' %}">Retour à l'accueil administration</a>
+    <a href="{% url 'administration_home' %}">Retour à l'espace administration</a>
     </p>
 
-</body>
-</html>
+{% endblock %}
