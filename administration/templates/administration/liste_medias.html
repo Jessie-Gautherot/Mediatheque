@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <h1>Liste des médias</h1>
 
+<!-- Liste complète -->
 <details>
-  <summary>Consulter la liste complète de nos Médias</summary>
+  <summary>Consulter la liste complète de nos médias</summary>
   <ul>
     {% for media in liste_complete %}
       <li>{{ media }}</li>
@@ -13,50 +13,26 @@
   </ul>
 </details>
 
-<details>
-  <summary>Consulter la liste complète de nos livres</summary>
-  <ul>
-    {% for livre in liste_livres %}
-      <li>{{ livre }}</li>
-    {% endfor %}
-  </ul>
-</details>
-
-<details>
-  <summary>Consulter la liste complète de nos CD</summary>
-  <ul>
-    {% for cd in liste_cd %}
-      <li>{{ cd }}</li>
-    {% endfor %}
-  </ul>
-</details>
-
-<details>
-  <summary>Consulter la liste complète de nos DVD</summary>
-  <ul>
-    {% for dvd in liste_dvd %}
-      <li>{{ dvd }}</li>
-    {% endfor %}
-  </ul>
-</details>
-
-<details>
-  <summary>Consulter la liste complète de nos jeux de plateau</summary>
-  <ul>
-    {% for jeu in liste_jeux %}
-      <li>{{ jeu }}</li>
-    {% endfor %}
-  </ul>
-    <p>Nous vous rappelons que vous pouvez jouer sur place, les jeux ne sont pas disponibles à l'emprunt </p>
-</details>
+<!-- Liste par type -->
+{% for type, liste in medias_par_type.items %}
+    <details>
+        <summary>Consulter la liste complète de nos {{ type }}</summary>
+        <ul>
+        {% for media in liste %}
+            <li>{{ media }}</li>
+        {% empty %}
+            <li>Aucun {{ type }} pour le moment.</li>
+        {% endfor %}
+        </ul>
+        {% if type == "Jeux de plateau" %}
+            <p>Nous vous rappelons que vous pouvez jouer sur place, les jeux ne sont pas disponibles à l'emprunt.</p>
+        {% endif %}
+    </details>
+{% endfor %}
 
 {% if from_visiteur %}
 <p><a href="{% url 'home' %}">← Retour à l'accueil</a></p>
 {% else %}
 <p><a href="{% url 'administration_home' %}">← Retour à l'espace administration</a></p>
 {% endif %}
-
-
-
-
 {% endblock %}

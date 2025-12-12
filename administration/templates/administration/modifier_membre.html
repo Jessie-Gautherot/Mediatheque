@@ -17,6 +17,16 @@
     {{ form.as_p }}
     <button type="submit">Enregistrer les modifications</button>
 </form>
+<br>
+
+<form method="post" action="{% url 'supprimer_membre' membre.id %}"
+      onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce membre ?');">
+    {% csrf_token %}
+    <button type="submit" >
+        Supprimer ce membre
+    </button>
+</form>
+
 
 <p>
     <a href="{% url 'administration_home' %}">Retour à l'espace administration</a>

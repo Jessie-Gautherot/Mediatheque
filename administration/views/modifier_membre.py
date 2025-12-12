@@ -21,4 +21,4 @@ def modifier_membre(request, membre_id):
     else:
         form = MembreForm(instance=membre)
 
-    return render(request, 'administration/modifier_membre.html', {'form': form})
+    return render(request, 'administration/modifier_membre.html', {'form': form, 'membre': membre, })

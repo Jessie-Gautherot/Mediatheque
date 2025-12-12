@@ -1,42 +1,31 @@
 from django.shortcuts import render, redirect
 from administration.forms.form_media import LivreForm, CDForm, DVDForm, JeuDePlateauForm
 
-def ajouter_livre(request):
+# Fonction pour ajouter n'importe quel type de média
+def ajouter_media(request, form_class, type_media):
     if request.method == "POST":
-        form = LivreForm(request.POST)
+        form = form_class(request.POST)
         if form.is_valid():
             form.save()
-            return redirect ('administration_home')
+            return redirect('administration_home')
     else:
-        form = LivreForm()
-    return render(request, "administration/ajouter_media.html", {"form": form, "type_media": "Livre"})
+        form = form_class()
+
+    return render(request, "administration/ajouter_media.html", {
+        "form": form,
+        "type_media": type_media
+    })
+
+
+# Fonctions spécifiques pour les URLs
+def ajouter_livre(request):
+    return ajouter_media(request, LivreForm, "Livre")
 
 def ajouter_cd(request):
-    if request.method == "POST":
-        form = CDForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect ('administration_home')
-    else:
-        form = CDForm()
-    return render(request, "administration/ajouter_media.html", {"form": form, "type_media": "CD"})
+    return ajouter_media(request, CDForm, "CD")
 
 def ajouter_dvd(request):
-    if request.method == "POST":
-        form = DVDForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('administration_home')
-    else:
-        form = DVDForm()
-    return render(request, "administration/ajouter_media.html", {"form": form, "type_media": "DVD"})
+    return ajouter_media(request, DVDForm, "DVD")
 
 def ajouter_jeu(request):
-    if request.method == "POST":
-        form = JeuDePlateauForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('administration_home')
-    else:
-        form = JeuDePlateauForm()
-    return render(request, "administration/ajouter_media.html", {"form": form, "type_media": "Jeu"})
+    return ajouter_media(request, JeuDePlateauForm, "Jeu")

@@ -34,8 +34,8 @@ def valider_retour_multi(request):
         for emprunt_id in emprunt_ids:
             try:
                 enregistrer_retour_emprunt(emprunt_id)
-                messages.success(request, f"Emprunt {emprunt_id} rendu.")
             except ValidationError as e:
                 messages.error(request, str(e))
 
+        messages.success(request, "Retour enregistré.")
     return redirect("retourner_media")

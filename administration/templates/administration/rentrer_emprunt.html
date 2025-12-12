@@ -30,6 +30,17 @@
     <button type="submit">Emprunter tous les médias sélectionnés</button>
 </form>
 
+<!-- Bloc messages -->
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {{ message }}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
 <p>
     <a href="{% url 'administration_home' %}">Retour à l'espace administration</a>
 </p>

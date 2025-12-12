@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <h1>Retour de médias</h1>
 
 <form method="get" action="{% url 'retourner_media' %}">
@@ -38,6 +39,14 @@
 
         <button type="submit">Enregistrer le retour</button>
     </form>
+{% endif %}
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
 {% endif %}
 
 <p>

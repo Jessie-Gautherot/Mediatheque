@@ -2,25 +2,19 @@ from administration.models.media import Livre, CD, DVD, JeuDePlateau
 from django.shortcuts import render
 
 def liste_medias(request):
+    medias_par_type = {
+        "Livres": Livre.objects.all(),
+        "CD": CD.objects.all(),
+        "DVD": DVD.objects.all(),
+        "Jeux de plateau": JeuDePlateau.objects.all(),
+    }
 
-    livres = Livre.objects.all()
-    cds = CD.objects.all()
-    dvds = DVD.objects.all()
-    jeux = JeuDePlateau.objects.all()
-    liste_complete = list(livres) + list(cds) + list(dvds) + list(jeux)
-    liste_empruntable = list(livres) + list(cds) + list(dvds)
+    liste_complete = list(Livre.objects.all()) + list(CD.objects.all()) + list(DVD.objects.all()) + list(JeuDePlateau.objects.all())
 
-    # Vérifie si le visiteur vient de la home pour avoir un lien retour
     from_visiteur = request.GET.get('from') == 'visiteur'
 
-
-    context = {
-        "liste_livres": livres,
-        "liste_cd": cds,
-        "liste_dvd": dvds,
-        "liste_jeux": jeux,
+    return render(request, "administration/liste_medias.html", {
+        "medias_par_type": medias_par_type,
         "liste_complete": liste_complete,
-        "liste_empruntable": liste_empruntable,
         "from_visiteur": from_visiteur,
-    }
-    return render(request, "administration/liste_medias.html", context)
+    })

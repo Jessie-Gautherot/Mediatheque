@@ -23,12 +23,9 @@ class Membre(models.Model):
             date_emprunt__lt=limite
         ).exists()
 
-    def peut_emprunter(self):
-        # Vérifie si le membre peut emprunter : moins de 3 emprunts actifs et pas d’emprunt en retard
-        return (
-            self.emprunts_actifs().count() < 3
-            and not self.a_emprunt_en_retard()
-        )
+    def peut_emprunter(self, nb_media=1):
+        return self.emprunts_actifs().count() + nb_media <= 3 and not self.a_emprunt_en_retard()
+
 
 
 
