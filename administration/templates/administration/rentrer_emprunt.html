@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Créer un emprunt</h1>
+
+<form method="post" action="{% url 'valider_emprunt_multi' %}">
+    {% csrf_token %}
+
+    <label for="membre_id">Choisir un membre :</label>
+    <select name="membre_id" id="membre_id" required>
+        <option value="">-- Sélectionnez un membre --</option>
+        {% for membre in membres %}
+            <option value="{{ membre.id }}">{{ membre }}</option>
+        {% endfor %}
+    </select>
+
+    <ul>
+        {% for media in media_empruntables %}
+            {% if media.est_disponible %}
+                <li>
+                    <label>
+                        <input type="checkbox" name="media_ids" value="{{ media.id }}">
+                        {{ media }}
+                    </label>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <button type="submit">Emprunter tous les médias sélectionnés</button>
+</form>
+
+<p>
+    <a href="{% url 'administration_home' %}">Retour à l'espace administration</a>
+</p>
+
+{% endblock %}
+

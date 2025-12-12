@@ -8,6 +8,7 @@ def liste_medias(request):
     dvds = DVD.objects.all()
     jeux = JeuDePlateau.objects.all()
     liste_complete = list(livres) + list(cds) + list(dvds) + list(jeux)
+    liste_empruntable = list(livres) + list(cds) + list(dvds)
 
     # Vérifie si le visiteur vient de la home pour avoir un lien retour
     from_visiteur = request.GET.get('from') == 'visiteur'
@@ -19,6 +20,7 @@ def liste_medias(request):
         "liste_dvd": dvds,
         "liste_jeux": jeux,
         "liste_complete": liste_complete,
+        "liste_empruntable": liste_empruntable,
         "from_visiteur": from_visiteur,
     }
     return render(request, "administration/liste_medias.html", context)

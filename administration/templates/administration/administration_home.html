@@ -4,12 +4,12 @@
 <h2>Espace administration</h2>
 <p>Bienvenue dans l'administration de la médiathèque.</p>
 
-<p><a href="{% url 'liste_medias' %}">📚 Afficher la liste des médias</a></p>
+<p><a href="{% url 'liste_medias' %}">Afficher la liste des médias</a></p>
 
 
 <!-- Menu déroulant pour ajouter un média -->
 <details>
-    <summary>➕ Ajouter un média</summary>
+    <summary>Ajouter un média</summary>
     <ul>
         <li><a href="{% url 'ajouter_livre' %}">Ajouter un livre</a></li>
         <li><a href="{% url 'ajouter_cd' %}">Ajouter un CD</a></li>
@@ -20,10 +20,21 @@
 
 <!-- Menu déroulant pour gérer les membres -->
 <details>
-    <summary>👥 Gérer les membres</summary>
+    <summary>Gérer les membres</summary>
    <ul>
         <li><a href="{% url 'liste_membres' %}">Afficher / Mettre à jour la liste des membres</a></li>
         <li><a href="{% url 'ajouter_membre' %}">Créer un membre</a></li>
+    </ul>
+</details>
+
+<!-- Menu déroulant pour les emprunts -->
+<details>
+    <summary>Gérer les emprunts</summary>
+    <ul>
+        <li><a href="{% url 'nouvel_emprunt' %}">Enregistrer un emprunt</a></li>
+        <li><a href="{% url 'retourner_media' %}">Effectuer un retour</a></li>
+
+
     </ul>
 </details>
 
