@@ -1,9 +1,9 @@
 from django.db import models
 
+
 class Media(models.Model):
     titre = models.CharField(max_length=200)
     empruntable = models.BooleanField(default=True)
-
 
     def est_disponible(self):
         # Vérifie s’il n’existe pas d’emprunt en cours pour ce média
@@ -29,6 +29,7 @@ class CD(Media):
 
     def __str__(self):
         return f"[CD] {self.titre} de {self.artiste}"
+
 
 class DVD(Media):
     realisateur = models.CharField(max_length=200)

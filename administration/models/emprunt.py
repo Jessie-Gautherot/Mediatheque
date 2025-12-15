@@ -1,9 +1,12 @@
+from datetime import timedelta
+
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils import timezone
-from datetime import timedelta
-from django.core.exceptions import ValidationError
-from .membre import Membre
+
 from .media import Media
+from .membre import Membre
+
 
 class Emprunt(models.Model):
     membre = models.ForeignKey(Membre, on_delete=models.CASCADE)
@@ -25,4 +28,5 @@ class Emprunt(models.Model):
         self.date_retour = timezone.now()
         self.save()
         return self
+
 

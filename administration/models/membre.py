@@ -1,6 +1,8 @@
+from datetime import timedelta
+
 from django.db import models
 from django.utils import timezone
-from datetime import timedelta
+
 
 class Membre(models.Model):
     nom = models.CharField(max_length=100)
@@ -24,9 +26,10 @@ class Membre(models.Model):
         ).exists()
 
     def peut_emprunter(self, nb_media=1):
-        return self.emprunts_actifs().count() + nb_media <= 3 and not self.a_emprunt_en_retard()
-
-
+        return (
+            self.emprunts_actifs().count() + nb_media <= 3
+            and not self.a_emprunt_en_retard()
+        )
 
 
 
