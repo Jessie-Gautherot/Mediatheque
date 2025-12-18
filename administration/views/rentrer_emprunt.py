@@ -28,7 +28,7 @@ def nouvel_emprunt(request):
 # Valider l'emprunt en utilisant le service
 def valider_emprunt_multi(request):
     if request.method != "POST":
-        return None
+        return redirect("nouvel_emprunt")
 
     membre_id = request.POST.get("membre_id")
     media_ids = request.POST.getlist("media_ids")
@@ -36,11 +36,11 @@ def valider_emprunt_multi(request):
     membre = Membre.objects.filter(id=membre_id).first()
     if not membre:
         messages.error(request, "Ce membre n'existe pas.")
-        return None
+        return redirect("nouvel_emprunt")
 
     if not media_ids:
         messages.error(request, "Aucun média sélectionné.")
-        return None
+        return redirect("nouvel_emprunt")
 
     # Vérification de la limite de 3 médias
     emprunts_actifs = membre.emprunts_actifs().count()
@@ -56,15 +56,30 @@ def valider_emprunt_multi(request):
         return redirect("nouvel_emprunt")
 
     # Boucle pour créer chaque emprunt via le service
+    succes = 0
+
     for media_id in media_ids:
         media = Media.objects.filter(id=media_id).first()
         if not media:
             messages.error(request, f"Média {media_id} introuvable.")
             continue
+
         try:
             creer_emprunt(membre, media, nb_media=1)
+            succes += 1
         except ValidationError as e:
             messages.error(request, f"{media} : {str(e)}")
 
-    messages.success(request, "emprunt enregistré")
+    # Message final cohérent
+    if succes > 0:
+        messages.success(
+            request,
+            f"{succes} emprunt(s) enregistré(s) avec succès."
+        )
+    else:
+        messages.error(
+            request,
+            "Aucun emprunt n'a pu être enregistré."
+        )
+
     return redirect("nouvel_emprunt")

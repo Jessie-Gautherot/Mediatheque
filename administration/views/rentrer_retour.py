@@ -32,18 +32,34 @@ def retourner_media(request):
 
 # Valide le retour de plusieurs emprunts
 def valider_retour_multi(request):
-    if request.method == "POST":
-        emprunt_ids = request.POST.getlist("emprunt_ids")
+    # Si ce n'est pas un POST, on redirige vers le formulaire
+    if request.method != "POST":
+        return redirect("retourner_media")
 
-        if not emprunt_ids:
-            messages.error(request, "Aucun emprunt sélectionné.")
-            return redirect("retourner_media")
+    emprunt_ids = request.POST.getlist("emprunt_ids")
 
-        for emprunt_id in emprunt_ids:
-            try:
-                enregistrer_retour_emprunt(emprunt_id)
-            except ValidationError as e:
-                messages.error(request, str(e))
+    if not emprunt_ids:
+        messages.error(request, "Aucun emprunt sélectionné.")
+        return redirect("retourner_media")
 
-        messages.success(request, "Retour enregistré.")
+    succes = 0
+
+    for emprunt_id in emprunt_ids:
+        try:
+            enregistrer_retour_emprunt(emprunt_id)
+            succes += 1
+        except ValidationError as e:
+            messages.error(request, str(e))
+
+    if succes > 0:
+        messages.success(
+            request,
+            f"{succes} retour(s) enregistré(s) avec succès."
+        )
+    else:
+        messages.error(
+            request,
+            "Aucun retour n'a pu être enregistré."
+        )
+
     return redirect("retourner_media")
