@@ -3,6 +3,7 @@ from django.urls import reverse
 from administration.models.membre import Membre
 from administration.models.media import Livre, CD, DVD
 from administration.models.emprunt import Emprunt
+from administration.emprunt_service import creer_emprunt
 
 @pytest.mark.django_db
 class TestEmprunt:
@@ -55,3 +56,29 @@ class TestEmprunt:
         assert response.status_code == 302
         emprunt.refresh_from_db()
         assert emprunt.date_retour is not None
+
+
+class TestEmpruntServiceUnitaire:
+
+    def test_creer_emprunt_unitaire(self, mocker):
+        # Mocks des dépendances
+        membre = mocker.Mock()
+        membre.peut_emprunter.return_value = True
+
+        media = mocker.Mock()
+        media.est_disponible.return_value = True
+        media.empruntable = True
+
+        # Mock de l'appel ORM
+        mock_create = mocker.patch(
+            "administration.emprunt_service.Emprunt.objects.create",
+            return_value=mocker.MagicMock(date_retour=None)
+        )
+
+        emprunt = creer_emprunt(membre, media)
+
+        assert emprunt.date_retour is None
+        mock_create.assert_called_once_with(
+            membre=membre,
+            media=media
+        )

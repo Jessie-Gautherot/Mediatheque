@@ -1,0 +1,663 @@
+[
+{
+    "model": "administration.media",
+    "pk": 2,
+    "fields": {
+        "titre": "Marche à l'ombre",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 3,
+    "fields": {
+        "titre": "Les Quatre Saisons",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 4,
+    "fields": {
+        "titre": "A Rush of Blood to the Head",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 5,
+    "fields": {
+        "titre": "Will Hunting",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 6,
+    "fields": {
+        "titre": "Cloud Atlas",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 7,
+    "fields": {
+        "titre": "Itinéraire d’un enfant gâté",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 8,
+    "fields": {
+        "titre": "Je voudrais que quelqu’un m’attende quelque part",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 9,
+    "fields": {
+        "titre": "Mrs Dalloway",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 10,
+    "fields": {
+        "titre": "Le Petit Prince",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 11,
+    "fields": {
+        "titre": "1984",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 12,
+    "fields": {
+        "titre": "Back to Black",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 13,
+    "fields": {
+        "titre": "Interstellar",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 14,
+    "fields": {
+        "titre": "RRRrrrr!!!",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 15,
+    "fields": {
+        "titre": "La Maison vide",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 16,
+    "fields": {
+        "titre": "Sangliers",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 17,
+    "fields": {
+        "titre": "little miss sunshine",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.media",
+    "pk": 18,
+    "fields": {
+        "titre": "Black and blue",
+        "empruntable": true
+    }
+},
+{
+    "model": "administration.livre",
+    "pk": 8,
+    "fields": {
+        "auteur": "Anna Gavalda"
+    }
+},
+{
+    "model": "administration.livre",
+    "pk": 9,
+    "fields": {
+        "auteur": "Virginia Woolf"
+    }
+},
+{
+    "model": "administration.livre",
+    "pk": 10,
+    "fields": {
+        "auteur": "Antoine de Saint-Exupéry"
+    }
+},
+{
+    "model": "administration.livre",
+    "pk": 11,
+    "fields": {
+        "auteur": "George Orwell"
+    }
+},
+{
+    "model": "administration.livre",
+    "pk": 15,
+    "fields": {
+        "auteur": "Laurent Mauvignier"
+    }
+},
+{
+    "model": "administration.livre",
+    "pk": 16,
+    "fields": {
+        "auteur": "Lisa Blumen"
+    }
+},
+{
+    "model": "administration.cd",
+    "pk": 2,
+    "fields": {
+        "artiste": "Renaud"
+    }
+},
+{
+    "model": "administration.cd",
+    "pk": 3,
+    "fields": {
+        "artiste": "Vivaldi"
+    }
+},
+{
+    "model": "administration.cd",
+    "pk": 4,
+    "fields": {
+        "artiste": "Coldplay"
+    }
+},
+{
+    "model": "administration.cd",
+    "pk": 12,
+    "fields": {
+        "artiste": "Amy Winehouse"
+    }
+},
+{
+    "model": "administration.cd",
+    "pk": 18,
+    "fields": {
+        "artiste": "The Rolling Stones"
+    }
+},
+{
+    "model": "administration.dvd",
+    "pk": 5,
+    "fields": {
+        "realisateur": "Gus Van Sant"
+    }
+},
+{
+    "model": "administration.dvd",
+    "pk": 6,
+    "fields": {
+        "realisateur": "Tom Tykwer, Lana Wachowski, Lilly Wachowski"
+    }
+},
+{
+    "model": "administration.dvd",
+    "pk": 7,
+    "fields": {
+        "realisateur": "Claude Lelouch"
+    }
+},
+{
+    "model": "administration.dvd",
+    "pk": 13,
+    "fields": {
+        "realisateur": "Christopher Nolan"
+    }
+},
+{
+    "model": "administration.dvd",
+    "pk": 14,
+    "fields": {
+        "realisateur": "Alain Chabat"
+    }
+},
+{
+    "model": "administration.dvd",
+    "pk": 17,
+    "fields": {
+        "realisateur": "Jonathan Dayton et Valerie Faris"
+    }
+},
+{
+    "model": "administration.jeudeplateau",
+    "pk": 1,
+    "fields": {
+        "titre": "Monopoly",
+        "createur": "Hasbro",
+        "empruntable": false
+    }
+},
+{
+    "model": "administration.jeudeplateau",
+    "pk": 2,
+    "fields": {
+        "titre": "Pictionary",
+        "createur": "Hasbro",
+        "empruntable": false
+    }
+},
+{
+    "model": "administration.jeudeplateau",
+    "pk": 3,
+    "fields": {
+        "titre": "Cluedo",
+        "createur": "Hasbro",
+        "empruntable": false
+    }
+},
+{
+    "model": "administration.jeudeplateau",
+    "pk": 4,
+    "fields": {
+        "titre": "Skyjo",
+        "createur": "Magilano",
+        "empruntable": false
+    }
+},
+{
+    "model": "administration.membre",
+    "pk": 1,
+    "fields": {
+        "nom": "Doe",
+        "prenom": "John",
+        "email": "johndoe@wanadoo.fr",
+        "telephone": "0568287335"
+    }
+},
+{
+    "model": "administration.membre",
+    "pk": 2,
+    "fields": {
+        "nom": "Does",
+        "prenom": "Janes",
+        "email": "janesdoes@wandoo.fr",
+        "telephone": "0686068223"
+    }
+},
+{
+    "model": "administration.membre",
+    "pk": 3,
+    "fields": {
+        "nom": "dooes",
+        "prenom": "Joé",
+        "email": "joedooes@wanadoo.com",
+        "telephone": "0674714325"
+    }
+},
+{
+    "model": "administration.membre",
+    "pk": 4,
+    "fields": {
+        "nom": "doue",
+        "prenom": "Johan",
+        "email": "johandoues@wanadoo.fr",
+        "telephone": "0686068223"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 1,
+    "fields": {
+        "membre": 1,
+        "media": 2,
+        "date_emprunt": "2025-12-11T15:52:11.151Z",
+        "date_retour": "2025-12-12T09:44:05.894Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 2,
+    "fields": {
+        "membre": 1,
+        "media": 7,
+        "date_emprunt": "2025-12-11T15:52:33.803Z",
+        "date_retour": "2025-12-12T09:44:06.008Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 3,
+    "fields": {
+        "membre": 1,
+        "media": 8,
+        "date_emprunt": "2025-12-11T19:11:51.757Z",
+        "date_retour": "2025-12-12T09:44:06.088Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 4,
+    "fields": {
+        "membre": 3,
+        "media": 12,
+        "date_emprunt": "2025-12-12T11:09:46.829Z",
+        "date_retour": "2025-12-12T11:10:28.484Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 5,
+    "fields": {
+        "membre": 3,
+        "media": 6,
+        "date_emprunt": "2025-12-12T11:09:46.954Z",
+        "date_retour": "2025-12-12T11:10:28.616Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 6,
+    "fields": {
+        "membre": 1,
+        "media": 8,
+        "date_emprunt": "2025-12-12T12:13:08.065Z",
+        "date_retour": "2025-12-12T13:36:16.343Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 7,
+    "fields": {
+        "membre": 1,
+        "media": 2,
+        "date_emprunt": "2025-12-12T12:13:08.205Z",
+        "date_retour": "2025-12-12T13:36:16.496Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 8,
+    "fields": {
+        "membre": 1,
+        "media": 12,
+        "date_emprunt": "2025-12-12T12:13:08.371Z",
+        "date_retour": "2025-12-12T13:36:16.570Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 9,
+    "fields": {
+        "membre": 1,
+        "media": 8,
+        "date_emprunt": "2025-12-12T13:54:37.722Z",
+        "date_retour": "2025-12-12T13:55:51.374Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 10,
+    "fields": {
+        "membre": 1,
+        "media": 9,
+        "date_emprunt": "2025-12-12T13:54:37.885Z",
+        "date_retour": "2025-12-12T13:55:51.502Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 11,
+    "fields": {
+        "membre": 1,
+        "media": 10,
+        "date_emprunt": "2025-12-12T13:54:37.972Z",
+        "date_retour": "2025-12-12T13:55:51.582Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 12,
+    "fields": {
+        "membre": 2,
+        "media": 8,
+        "date_emprunt": "2025-12-12T14:03:17.334Z",
+        "date_retour": "2025-12-12T14:03:38.455Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 13,
+    "fields": {
+        "membre": 2,
+        "media": 9,
+        "date_emprunt": "2025-12-12T14:03:17.496Z",
+        "date_retour": "2025-12-12T14:03:38.714Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 14,
+    "fields": {
+        "membre": 2,
+        "media": 10,
+        "date_emprunt": "2025-12-12T14:03:17.596Z",
+        "date_retour": "2025-12-12T14:03:38.890Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 15,
+    "fields": {
+        "membre": 3,
+        "media": 4,
+        "date_emprunt": "2025-12-12T14:06:15.069Z",
+        "date_retour": "2025-12-12T14:06:37.664Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 16,
+    "fields": {
+        "membre": 3,
+        "media": 6,
+        "date_emprunt": "2025-12-12T14:06:15.273Z",
+        "date_retour": "2025-12-12T14:06:37.807Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 17,
+    "fields": {
+        "membre": 3,
+        "media": 14,
+        "date_emprunt": "2025-12-12T14:06:15.361Z",
+        "date_retour": "2025-12-12T14:06:37.897Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 18,
+    "fields": {
+        "membre": 1,
+        "media": 11,
+        "date_emprunt": "2025-12-12T14:08:56.774Z",
+        "date_retour": "2025-12-12T14:09:24.717Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 19,
+    "fields": {
+        "membre": 1,
+        "media": 3,
+        "date_emprunt": "2025-12-12T14:08:56.912Z",
+        "date_retour": "2025-12-12T14:09:24.848Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 20,
+    "fields": {
+        "membre": 1,
+        "media": 12,
+        "date_emprunt": "2025-12-12T14:08:56.998Z",
+        "date_retour": "2025-12-12T14:09:24.979Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 24,
+    "fields": {
+        "membre": 1,
+        "media": 8,
+        "date_emprunt": "2025-12-15T16:31:14.895Z",
+        "date_retour": "2025-12-15T16:42:57.741Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 25,
+    "fields": {
+        "membre": 1,
+        "media": 9,
+        "date_emprunt": "2025-12-15T16:31:15.040Z",
+        "date_retour": "2025-12-15T16:42:57.885Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 26,
+    "fields": {
+        "membre": 1,
+        "media": 10,
+        "date_emprunt": "2025-12-15T16:31:15.138Z",
+        "date_retour": "2025-12-15T16:42:57.997Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 27,
+    "fields": {
+        "membre": 1,
+        "media": 16,
+        "date_emprunt": "2025-12-15T16:43:11.543Z",
+        "date_retour": "2025-12-17T09:58:04.762Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 28,
+    "fields": {
+        "membre": 1,
+        "media": 3,
+        "date_emprunt": "2025-12-15T16:43:11.753Z",
+        "date_retour": "2025-12-17T09:58:04.953Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 29,
+    "fields": {
+        "membre": 1,
+        "media": 12,
+        "date_emprunt": "2025-12-15T16:43:11.843Z",
+        "date_retour": "2025-12-17T09:58:05.085Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 30,
+    "fields": {
+        "membre": 1,
+        "media": 8,
+        "date_emprunt": "2025-12-17T09:58:21.597Z",
+        "date_retour": "2025-12-17T09:58:56.963Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 31,
+    "fields": {
+        "membre": 1,
+        "media": 9,
+        "date_emprunt": "2025-12-17T09:58:21.751Z",
+        "date_retour": "2025-12-17T09:59:09.478Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 32,
+    "fields": {
+        "membre": 1,
+        "media": 10,
+        "date_emprunt": "2025-12-17T09:58:21.895Z",
+        "date_retour": "2025-12-17T09:59:09.611Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 33,
+    "fields": {
+        "membre": 1,
+        "media": 8,
+        "date_emprunt": "2025-12-17T09:59:30.245Z",
+        "date_retour": "2025-12-18T14:49:55.870Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 34,
+    "fields": {
+        "membre": 2,
+        "media": 9,
+        "date_emprunt": "2025-12-18T14:49:14.977Z",
+        "date_retour": "2025-12-18T14:50:08.509Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 35,
+    "fields": {
+        "membre": 2,
+        "media": 10,
+        "date_emprunt": "2025-12-18T14:49:15.118Z",
+        "date_retour": "2025-12-18T14:50:08.652Z"
+    }
+},
+{
+    "model": "administration.emprunt",
+    "pk": 36,
+    "fields": {
+        "membre": 2,
+        "media": 11,
+        "date_emprunt": "2025-12-18T14:49:15.234Z",
+        "date_retour": "2025-12-18T14:50:08.735Z"
+    }
+}
+]
