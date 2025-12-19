@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Liste des médias</h1>
+
+<!-- Liste complète -->
+<details>
+  <summary>Consulter la liste complète de nos médias</summary>
+  <ul>
+    {% for media in liste_complete %}
+      <li>{{ media }}</li>
+    {% endfor %}
+  </ul>
+</details>
+
+<!-- Liste par type -->
+{% for type, liste in medias_par_type.items %}
+    <details>
+        <summary>Consulter la liste complète de nos {{ type }}</summary>
+        <ul>
+        {% for media in liste %}
+            <li>{{ media }}</li>
+        {% empty %}
+            <li>Aucun {{ type }} pour le moment.</li>
+        {% endfor %}
+        </ul>
+        {% if type == "Jeux de plateau" %}
+            <p>Nous vous rappelons que vous pouvez jouer sur place, les jeux ne sont pas disponibles à l'emprunt.</p>
+        {% endif %}
+    </details>
+{% endfor %}
+
+{% if from_visiteur %}
+<p><a href="{% url 'home' %}">← Retour à l'accueil</a></p>
+{% else %}
+<p><a href="{% url 'administration_home' %}">← Retour à l'espace administration</a></p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Connexion Administration</h2>
+
+{% if form.errors %}
+    <p>Nom d’utilisateur ou mot de passe incorrect.</p>
+{% endif %}
+
+<form method="post" autocomplete="off">
+    {% csrf_token %}
+
+    <div>
+        <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label><br>
+        <input type="text"
+               name="{{ form.username.html_name }}"
+               id="{{ form.username.id_for_label }}"
+               value=""
+               autocomplete="off">
+    </div>
+
+    <div>
+        <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label><br>
+        <input type="password"
+               name="{{ form.password.html_name }}"
+               id="{{ form.password.id_for_label }}"
+               value=""
+               autocomplete="new-password">
+    </div>
+
+    <button type="submit">Se connecter</button>
+</form>
+
+<p>
+    <a href="{% url 'home' %}">Retour à l’accueil</a>
+
+</p>
+{% endblock %}
+
+

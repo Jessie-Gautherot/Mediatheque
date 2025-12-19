@@ -3,14 +3,7 @@
 {% block content %}
 <h2>Bienvenue à la médiathèque !</h2>
 
-<h3>Consulter notre liste de livres</h3>
-
-<h3>Consulter notre liste de CD</h3>
-
-<h3>Consulter notre liste de DVD</h3>
-
-<h3>Consulter notre liste de jeux de plateau</h3>
-<p>Nous vous rapellons que vous pouvez jouer sur place, les jeux ne sont pas disponibles à l'emprunt</p>
-
+Pour consulter la liste de nos médias,
+<a href="{% url 'liste_medias' %}?from=visiteur">Cliquez ici</a>
 
 {% endblock %}
